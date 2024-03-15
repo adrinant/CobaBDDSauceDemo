@@ -11,7 +11,7 @@ public class InventoryPage {
 
     public static WebDriver webDriver;
 
-    public InventoryPage(WebDriver driver){
+    public InventoryPage(WebDriver driver) {
         PageFactory.initElements(driver, this);
         webDriver = driver;
     }
@@ -23,17 +23,17 @@ public class InventoryPage {
     private WebElement shoppingCartIcon;
 
 
-    public void selectSortProduct(String textSortBy){
+    public void selectSortProduct(String textSortBy) {
         Select select = new Select(sortProduct);
         select.selectByVisibleText(textSortBy);
     }
 
-    public void clickAddtoCartItem(String itemTitle){
-        String button = "//div[.='"+itemTitle+"']/ancestor::div[@class='inventory_item_description']//button";
+    public void clickAddtoCartItem(String itemTitle) {
+        String button = "//div[.='" + itemTitle + "']/ancestor::div[@class='inventory_item_description']//button";
         webDriver.findElement(By.xpath(button)).click();
     }
 
-    public void selectShoppingCartIcon(){
+    public void selectShoppingCartIcon() {
         shoppingCartIcon.click();
     }
 

@@ -9,7 +9,7 @@ public class LoginPage {
 
     public static WebDriver webDriver;
 
-    public LoginPage(WebDriver driver){
+    public LoginPage(WebDriver driver) {
         PageFactory.initElements(driver, this);
         webDriver = driver;
     }
@@ -26,23 +26,23 @@ public class LoginPage {
     @FindBy(xpath = "//h3")
     private WebElement errorMessage;
 
-    public void inputFieldUserName(String userName){
+    public void inputFieldUserName(String userName) {
         fieldUserName.sendKeys(userName);
     }
 
-    public void inputFieldPassword(String password){
+    public void inputFieldPassword(String password) {
         fieldPassword.sendKeys(password);
     }
 
-    public void clickLoginButton(){
+    public void clickLoginButton() {
         loginButton.click();
     }
 
-    public boolean verifyInventoryContainer(){
+    public boolean verifyInventoryContainer() {
         return inventoryContainer.isDisplayed();
     }
 
-    public boolean verifyLoginPage(){
+    public boolean verifyLoginPage() {
         boolean a = fieldUserName.isDisplayed();
         boolean b = fieldPassword.isDisplayed();
         boolean c = loginButton.isDisplayed();

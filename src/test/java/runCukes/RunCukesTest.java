@@ -11,7 +11,7 @@ import org.junit.runner.RunWith;
                 "step_definitions"
         },
         features = {"classpath:features/"},
-        plugin= {"pretty","html:target/site/cucumber-pretty","json:target/cucumber/cucumber.json"},
+        plugin = {"pretty", "html:target/site/cucumber-pretty", "json:target/cucumber/cucumber.json"},
         tags = "@LoginToPurchase"
 )
 

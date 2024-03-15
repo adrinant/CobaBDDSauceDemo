@@ -24,7 +24,7 @@ public class LoginToPurchaseSteps {
     }
 
     @When("User input {string} as a userName {string} as a password")
-    public void credential(String userName, String password){
+    public void credential(String userName, String password) {
         loginPage.inputFieldUserName(userName);
         loginPage.inputFieldPassword(password);
         loginPage.clickLoginButton();
@@ -39,22 +39,27 @@ public class LoginToPurchaseSteps {
     public void userSortProductBy(String textSortBy) {
         inventoryPage.selectSortProduct(textSortBy);
     }
+
     @And("User add to cart button for {string}")
     public void userAddToCartButtonFor(String itemTitle) {
         inventoryPage.clickAddtoCartItem(itemTitle);
     }
+
     @Then("User click shopping cart badge")
     public void userClickShoppingCartBadge() {
         inventoryPage.selectShoppingCartIcon();
     }
+
     @And("User remove {string} from shopping cart")
     public void userRemoveFromShoppingCart(String itemTitle) {
         checkoutPage.clickRemoveFromCart(itemTitle);
     }
+
     @And("User click Checkout button")
     public void userClickCheckoutButton() {
         checkoutPage.clickCheckoutButton();
     }
+
     @Then("User redirected to Checkout Step One page")
     public void userRedirectedToCheckoutStepOnePage() {
         Assert.assertTrue(checkoutPage.verifyCheckoutOnePage());
@@ -62,16 +67,19 @@ public class LoginToPurchaseSteps {
 
     @And("User input {string} as FirstName {string} as LastName {string} as ZipCode")
     public void userInputAsFirstNameAsLastNameAsZipCode(String firstName, String lastName, String zipCode) {
-        checkoutPage.inputCheckoutInfo(firstName,lastName,zipCode);
+        checkoutPage.inputCheckoutInfo(firstName, lastName, zipCode);
     }
+
     @And("User click Continue button")
     public void userClickContinueButton() {
         checkoutPage.clickContinueButton();
     }
+
     @Then("User redirected to Checkout Step Two page")
     public void userRedirectedToCheckoutStepTwoPage() {
         Assert.assertTrue(checkoutPage.verifySummaryTotal());
     }
+
     @And("User click Finish button")
     public void userClickFinishButton() {
         checkoutPage.clickFinishButton();

@@ -10,7 +10,7 @@ public class CheckoutPage {
 
     public static WebDriver webDriver;
 
-    public CheckoutPage(WebDriver driver){
+    public CheckoutPage(WebDriver driver) {
         PageFactory.initElements(driver, this);
         webDriver = driver;
     }
@@ -43,40 +43,40 @@ public class CheckoutPage {
     @FindBy(xpath = "//img[@alt='Pony Express']")
     private WebElement thankYou;
 
-    public void clickRemoveFromCart(String itemTitle){
-        String button = "//div[.='"+itemTitle+"']/ancestor::div[1]/div[@class='item_pricebar']/button";
+    public void clickRemoveFromCart(String itemTitle) {
+        String button = "//div[.='" + itemTitle + "']/ancestor::div[1]/div[@class='item_pricebar']/button";
         webDriver.findElement(By.xpath(button)).click();
     }
 
-    public void clickCheckoutButton(){
+    public void clickCheckoutButton() {
         checkoutButton.click();
     }
 
-    public boolean verifyCheckoutOnePage(){
+    public boolean verifyCheckoutOnePage() {
         boolean a = checkoutInfo.isDisplayed();
         boolean b = inputFirstName.isDisplayed();
         return a && b;
     }
 
-    public void inputCheckoutInfo(String firstName, String lastName, String zipCode){
+    public void inputCheckoutInfo(String firstName, String lastName, String zipCode) {
         inputFirstName.sendKeys(firstName);
         inputLastName.sendKeys(lastName);
         inputZipCode.sendKeys(zipCode);
     }
 
-    public void clickContinueButton(){
+    public void clickContinueButton() {
         continueButton.click();
     }
 
-    public boolean verifySummaryTotal(){
+    public boolean verifySummaryTotal() {
         return summaryTotal.isDisplayed();
     }
 
-    public void clickFinishButton(){
+    public void clickFinishButton() {
         finishButton.click();
     }
 
-    public boolean verifyThankYou(){
+    public boolean verifyThankYou() {
         return thankYou.isDisplayed();
     }
 
