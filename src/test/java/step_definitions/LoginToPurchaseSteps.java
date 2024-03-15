@@ -5,7 +5,6 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.checkerframework.checker.units.qual.C;
 import org.example.pageObject.CheckoutPage;
 import org.example.pageObject.InventoryPage;
 import org.example.pageObject.LoginPage;
@@ -49,8 +48,8 @@ public class LoginToPurchaseSteps {
         inventoryPage.selectShoppingCartIcon();
     }
     @And("User remove {string} from shopping cart")
-    public void userRemoveFromShoppingCart() {
-        checkoutPage.clickRemoveSauceLabsBikeLight();
+    public void userRemoveFromShoppingCart(String itemTitle) {
+        checkoutPage.clickRemoveFromCart(itemTitle);
     }
     @And("User click Checkout button")
     public void userClickCheckoutButton() {

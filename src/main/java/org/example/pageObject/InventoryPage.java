@@ -29,7 +29,7 @@ public class InventoryPage {
     }
 
     public void clickAddtoCartItem(String itemTitle){
-        String button = "//div[@class='inventory_list']/div/div[@class='inventory_item_description']/div[@class='pricebar']/button[@id='"+itemTitle+"']";
+        String button = "//div[.='"+itemTitle+"']/ancestor::div[@class='inventory_item_description']//button";
         webDriver.findElement(By.xpath(button)).click();
     }
 

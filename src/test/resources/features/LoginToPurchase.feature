@@ -1,8 +1,8 @@
 @LoginToPurchase
 Feature: Login
-  As a user i want to login to saucedemo
+  As a user i want purchase one of the product
 
-  Scenario: Login with valid credential
+  Scenario: Login, Adding 2 item to cart, remove 1 from cart and then finish the checkout process
     Given User open the saucedemo website
     When User input "standard_user" as a userName "secret_sauce" as a password
     Then User redirected to inventory page

@@ -1,5 +1,6 @@
 package org.example.pageObject;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -17,7 +18,7 @@ public class CheckoutPage {
     @FindBy(xpath = "//button[@id='remove-sauce-labs-bike-light']")
     private WebElement removeSauceLabsBikeLight;
 
-    @FindBy(xpath = "//button[@id='remove-sauce-labs-bike-light']")
+    @FindBy(xpath = "//button[@id='checkout']")
     private WebElement checkoutButton;
 
     @FindBy(xpath = "//div[@class='checkout_info']")
@@ -42,8 +43,9 @@ public class CheckoutPage {
     @FindBy(xpath = "//img[@alt='Pony Express']")
     private WebElement thankYou;
 
-    public void clickRemoveSauceLabsBikeLight(){
-        removeSauceLabsBikeLight.click();
+    public void clickRemoveFromCart(String itemTitle){
+        String button = "//div[.='"+itemTitle+"']/ancestor::div[1]/div[@class='item_pricebar']/button";
+        webDriver.findElement(By.xpath(button)).click();
     }
 
     public void clickCheckoutButton(){
