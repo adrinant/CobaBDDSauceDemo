@@ -49,4 +49,8 @@ public class LoginPage {
         return a && b && c;
     }
 
+    public String getErrorMessage(){
+        return errorMessage.getText();
+    }
+
 }

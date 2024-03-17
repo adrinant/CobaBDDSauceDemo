@@ -11,7 +11,7 @@ import org.example.pageObject.LoginPage;
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 
-public class LoginToPurchaseSteps {
+public class PurchaseSteps {
 
     private final WebDriver driver = Hooks.driver;
     LoginPage loginPage = new LoginPage(driver);
